@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Reymedi Clinic Palette */
+  --sterile-ink: #101417;
+  --clinic-porcelain: #F7F4EE;
+  --remedy-green: #0FA36B;
+  --triage-coral: #EF6F61;
+  --soft-amber: #D6A84F;
+  --deep-teal: #0E4F56;
+  --case-blue: #4967FF;
+  --muted-graphite: #56616A;
+  --pale-mint: #DDF4EA;
+  --private-plum: #5D3B66;
+
+  --background: var(--clinic-porcelain);
+  --foreground: var(--sterile-ink);
+  --border: #E2DDD6;
+  --surface: #FFFFFF;
+  --surface-2: #F0EDE7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Clinic motion primitives */
+@keyframes clinic-slide-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes escrow-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+.animate-clinic-in {
+  animation: clinic-slide-in 0.3s ease-out forwards;
+}
+
+.animate-escrow-pulse {
+  animation: escrow-pulse 2s ease-in-out infinite;
+}
